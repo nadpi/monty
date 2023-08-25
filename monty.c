@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	FILE *fp = fopen(argv[1], "r");
 	int i = 0, counter = 0, flag = 0;
-	instruction_t ops[] = {{"push", push}, {"pall", pall}};
+	instruction_t ops[] = {{"push", push}, {"pall", pall}, {"nop", nop}};
 	char buffer[256], *oper;
 	stack_t *top = NULL;
 

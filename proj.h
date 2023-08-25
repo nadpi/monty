@@ -48,4 +48,5 @@ void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
 void execute(stack_t**, char*, int);
 void freest(stack_t **);
+void nop(stack_t **, unsigned int);
 #endif
