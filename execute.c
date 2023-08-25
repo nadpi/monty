@@ -10,17 +10,18 @@ void execute(stack_t **top, char *oper, int counter)
 {
 	instruction_t ops[] = {
 	{"push", push},
-	{"pall", pall}
+	{"pall", pall},
+	{"nop", nop},
+	{"pint", pint}
 	};
 	int i = 0;
 
-	while (i < 3)
+	for (i = 0; i < 4; i++)
 	{
 		if (strcmp(oper, ops[i].opcode) == 0)
 		{
 			ops[i].f(top, counter);
 			break;
 		}
-		i++;
 	}
 }

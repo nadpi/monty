@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	FILE *fp = fopen(argv[1], "r");
 	int i = 0, counter = 0, flag = 0;
-	instruction_t ops[] = {{"push", push}, {"pall", pall}, {"nop", nop}};
+	instruction_t ops[] = {{"push", push}, {"pall", pall}, {"nop", nop}, {"pint", pint}};
 	char buffer[256], *oper;
 	stack_t *top = NULL;
 
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		omk1.arg = strtok(NULL, " \n\t");
 		if (oper)
 		{
-		for (i = 0; i < 3; i++)
+		for (i = 0; i < 4; i++)
 		{
 			if (strcmp(oper, ops[i].opcode) == 0)
 			{
