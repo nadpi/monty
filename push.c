@@ -1,0 +1,36 @@
+#include "proj.h"
+/**
+ * push - pushes an element to the stack.
+ * @element: element
+ * Return: nothing
+ */
+void push (stack_t **top, unsigned int counter)
+{
+	stack_t *newnode;
+	int i;
+
+	for (i = 0; omk1.arg[i] != '\0'; i++)
+	{
+	if (!isdigit(omk1.arg[i]))
+	{
+	printf("L%d: usage: push integer\n", counter);
+	exit(EXIT_FAILURE);
+	}
+	}
+	newnode = malloc(sizeof(stack_t));
+
+	if(!newnode)
+		exit(EXIT_FAILURE);
+	newnode->n = atoi(omk1.arg);
+	if (!*top)
+	{
+		newnode->next = NULL;
+		*top = newnode;
+	}
+	else
+	{
+		(*top)->next = newnode;
+		newnode->prev = *top;
+		*top = newnode;
+	}
+}
