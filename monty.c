@@ -41,5 +41,6 @@ int main(int argc, char *argv[])
 		}
 	}
 	fclose(fp);
+	freest(&top);
 	return (0);
 }
