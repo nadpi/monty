@@ -12,7 +12,7 @@ void push(stack_t **top, unsigned int counter)
 
 	for (i = 0; omk1.arg[i] != '\0'; i++)
 	{
-	if (!isdigit(omk1.arg[i]))
+	if (!isdigit(omk1.arg[i]) || !omk1.arg[i])
 	{
 	printf("L%d: usage: push integer\n", counter);
 	exit(EXIT_FAILURE);
