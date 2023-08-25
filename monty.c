@@ -1,4 +1,4 @@
-#include "proj.h"
+#include "monty.h"
 omk_omk omk1;
 int main(int argc, char *argv[])
 {
