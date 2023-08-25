@@ -21,7 +21,10 @@ void push(stack_t **top, unsigned int counter)
 
 	newnode = malloc(sizeof(stack_t));
 	if (!newnode)
+	{
+		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
+	}
 	newnode->n = atoi(omk1.arg);
 	if (!*top)
 	{
