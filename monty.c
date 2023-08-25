@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		omk1.arg = strtok(NULL, " \n\t");
 		if (oper)
 		{
-		for (i = 0; i < 2; i++)
+		for (i = 0; i < 3; i++)
 		{
 			if (strcmp(oper, ops[i].opcode) == 0)
 			{
