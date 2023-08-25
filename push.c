@@ -14,7 +14,7 @@ void push(stack_t **top, unsigned int counter)
 	{
 	if (!isdigit(omk1.arg[i]) || !omk1.arg[i])
 	{
-	printf("L%d: usage: push integer\n", counter);
+	fprintf(stderr, "L%d: usage: push integer\n", counter);
 	exit(EXIT_FAILURE);
 	}
 	}
@@ -22,7 +22,7 @@ void push(stack_t **top, unsigned int counter)
 	newnode = malloc(sizeof(stack_t));
 	if (!newnode)
 	{
-		printf("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	newnode->n = atoi(omk1.arg);

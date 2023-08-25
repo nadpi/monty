@@ -14,7 +14,7 @@ void pall(stack_t **top, unsigned int line)
 		exit(0);
 	while (curr)
 	{
-		printf("%d\n", curr->n);
+		fprintf(stdout, "%d\n", curr->n);
 		curr = curr->prev;
 	}
 }

@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	if (fp == NULL)
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 		}
 		if (flag == 0)
 		{
-			printf("L%d: unknown instruction %s\n", counter, oper);
+			fprintf(stderr, "L%d: unknown instruction %s\n", counter, oper);
 			exit(EXIT_FAILURE);
 		}
 	}
