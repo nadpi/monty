@@ -14,7 +14,7 @@ void execute(stack_t **top, char *oper, int counter)
 	};
 	int i = 0;
 
-	while (i < 2)
+	while (i < 3)
 	{
 		if (strcmp(oper, ops[i].opcode) == 0)
 		{
