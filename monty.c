@@ -20,25 +20,25 @@ int main(int argc, char *argv[])
 	}
 	while (fgets(buffer, sizeof(buffer), fp) != NULL)
 	{
-		counter++;
-		oper = strtok(buffer, " \n\t");
-		omk1.arg = strtok(NULL, " \n\t");
-		if (oper)
+	counter++;
+	oper = strtok(buffer, " \n\t");
+	omk1.arg = strtok(NULL, " \n\t");
+	if (oper)
+	{
+	for (i = 0; i < 4; i++)
+	{
+		if (strcmp(oper, ops[i].opcode) == 0)
 		{
-		for (i = 0; i < 4; i++)
-		{
-			if (strcmp(oper, ops[i].opcode) == 0)
-			{
-				execute(&top, oper, counter);
-				flag = 1;
-			}
+			execute(&top, oper, counter);
+			flag = 1;
 		}
-		}
-		if (flag == 0)
-		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", counter, oper);
-			exit(EXIT_FAILURE);
-		}
+	}
+	}
+	if (flag == 0)
+	{
+	fprintf(stderr, "L%d: unknown instruction %s\n", counter, oper);
+	exit(EXIT_FAILURE);
+	}
 	}
 	fclose(fp);
 	return (EXIT_SUCCESS);
