@@ -22,21 +22,31 @@ int main(int argc, char *argv[])
 	{
 	counter++;
 	oper = strtok(buffer, " \n\t");
+	if (oper == NULL || strlen(oper) == 0) {
+        continue;
+	}
 	/*if (oper[0] == '#')
 		return (0);*/
 	omk1.arg = strtok(NULL, " \n\t");
 	if (oper)
 	{
+		if (strcmp(oper, "push") == 0)
+		{
+	       if (omk1.arg == NULL)
+        {
+            fprintf(stderr, "L%d: usage: push integer\n", counter);
+            exit(EXIT_FAILURE);
+        }
+		}
 	for (i = 0; i < 4; i++)
 	{
+		flag = 0;
 		if (strcmp(oper, ops[i].opcode) == 0)
 		{
 			execute(&top, oper, counter);
 			flag = 1;
 			break;
 		}
-		else
-			flag = 0;
 	}
 	}
 	if (flag == 0)
