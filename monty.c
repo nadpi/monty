@@ -1,13 +1,10 @@
 #include "proj.h"
 omk_omk omk1;
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-	FILE *fp;
+	FILE *fp = fopen(argv[1], "r");
 	int i = 0, counter = 0, flag = 0;
-	instruction_t ops[] = {
-	{"push", push},
-	{"pall", pall}
-	};
+	instruction_t ops[] = {{"push", push}, {"pall", pall}};
 	char buffer[256], *oper;
 	stack_t *top = NULL;
 
@@ -16,8 +13,6 @@ int main(int argc, char* argv[])
 		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
-	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
@@ -27,16 +22,15 @@ int main(int argc, char* argv[])
 	{
 		counter++;
 		oper = strtok(buffer, " \n\t");
-		omk1.arg = strtok(NULL," \n\t");
+		omk1.arg = strtok(NULL, " \n\t");
 		if (oper)
 		{
 		for (i = 0; i < 2; i++)
 		{
-			if (strcmp(oper,ops[i].opcode) == 0)
+			if (strcmp(oper, ops[i].opcode) == 0)
 			{
 				execute(&top, oper, counter);
 				flag = 1;
-				break;
 			}
 		}
 		}
@@ -45,7 +39,6 @@ int main(int argc, char* argv[])
 			printf("L%d: unknown instruction %s\n", counter, oper);
 			exit(EXIT_FAILURE);
 		}
-			
 	}
 	fclose(fp);
 	return (0);

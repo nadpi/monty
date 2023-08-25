@@ -1,10 +1,12 @@
 #include "proj.h"
 /**
  * execute - executes
- * @n: num of args
+ * @top: top
+ * @oper: oper
+ * @counter: counter
  * Return: nothing
  */
-void execute(stack_t **top, char* oper, int counter)
+void execute(stack_t **top, char *oper, int counter)
 {
 	instruction_t ops[] = {
 	{"push", push},
