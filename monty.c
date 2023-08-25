@@ -31,26 +31,15 @@ int main(int argc, char *argv[])
 			{
 				execute(&top, oper, counter);
 				flag = 1;
-				break;
 			}
 		}
 		}
-		if (flag == 0 || !oper)
+		if (flag == 0)
 		{
 			printf("L%d: unknown instruction %s\n", counter, oper);
-			fclose(fp);
-			freest(&top);
 			exit(EXIT_FAILURE);
 		}
 	}
-	if (!feof(fp))
-	{
-		printf("Error reading file\n");
-		fclose(fp);
-		freest(&top);
-		exit(EXIT_FAILURE);
-	}
 	fclose(fp);
-	freest(&top);
-	return EXIT_SUCCESS;
+	return (EXIT_SUCCESS);
 }

@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * free - frees
+ * freest - frees
  * @top: stack
  * Return: nothing
  */
