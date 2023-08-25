@@ -35,6 +35,8 @@ int main(int argc, char *argv[])
 			flag = 1;
 			break;
 		}
+		else
+			flag = 0;
 	}
 	}
 	if (flag == 0)
