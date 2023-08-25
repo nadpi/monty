@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
 	{
 	counter++;
 	oper = strtok(buffer, " \n\t");
+	if (oper[0] == '#')
+		return (0);
 	omk1.arg = strtok(NULL, " \n\t");
 	if (oper)
 	{
