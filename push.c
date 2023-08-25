@@ -8,9 +8,11 @@
 void push(stack_t **top, unsigned int counter)
 {
 	stack_t *newnode;
-	int i;
+	int i = 0;
 
-	for (i = 0; omk1.arg[i] != '\0'; i++)
+	if (omk1.arg[i] == '-')
+		i++;
+	for (; omk1.arg[i] != '\0'; i++)
 	{
 	if (!isdigit(omk1.arg[i]) || !omk1.arg[i])
 	{
