@@ -28,9 +28,9 @@ void push(stack_t **top, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	newnode->n = atoi(omk1.arg);
+	newnode->next = NULL;
 	if (!*top)
 	{
-		newnode->next = NULL;
 		*top = newnode;
 	}
 	else
