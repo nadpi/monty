@@ -11,7 +11,7 @@ void pall(stack_t **top, unsigned int line)
 	(void)line;
 
 	if (!curr)
-		exit(0);
+		return;
 	while (curr)
 	{
 		fprintf(stdout, "%d\n", curr->n);
