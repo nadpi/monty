@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
 		flag = 0;
 		if (strcmp(oper, ops[i].opcode) == 0)
 		{
-			printf("hello");
 			execute(&top, oper, counter);
 			flag = 1;
 			break;
