@@ -37,6 +37,11 @@ int main(int argc, char *argv[])
             fprintf(stderr, "L%d: usage: push integer\n", counter);
             exit(EXIT_FAILURE);
         }
+	       if (!isdigit(omk1.arg[0]) && omk1.arg[0] != '-')
+    {
+        fprintf(stderr, "L%d: usage: push integer\n", counter);
+        exit(EXIT_FAILURE);
+    }
 		}
 	for (i = 0; i < 4; i++)
 	{
