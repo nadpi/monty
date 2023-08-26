@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	FILE *fp = fopen(argv[1], "r");
 	int i = 0, counter = 0, flag = 0;
-	instruction_t ops[] = {{"push", push}, {"pall", pall}, {"nop", nop}, {"pint", pint}, {"pop", pop}};
+	instruction_t ops[] = {{"push", push}, {"pall", pall}, {"nop", nop}, {"pint", pint}, {"pop", pop}, {"add", add}};
 	char buffer[256], *oper;
 	stack_t *top = NULL;
 
@@ -41,11 +41,12 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 		}
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 6; i++)
 	{
 		flag = 0;
 		if (strcmp(oper, ops[i].opcode) == 0)
 		{
+			printf("hello");
 			execute(&top, oper, counter);
 			flag = 1;
 			break;
