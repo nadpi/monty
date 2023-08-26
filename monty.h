@@ -50,4 +50,5 @@ void execute(stack_t**, char*, int);
 void freest(stack_t **);
 void nop(stack_t **, unsigned int);
 void pint(stack_t **, unsigned int);
+void pop(stack_t **, unsigned int);
 #endif
