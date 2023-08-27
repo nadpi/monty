@@ -8,7 +8,8 @@
 void swap(stack_t **top, unsigned int line)
 {
 	stack_t *curr;
-
+	
+	int temp = 0;
 	curr = *top;
 
 	if (!*top || (*top)->prev == NULL)
@@ -16,7 +17,8 @@ void swap(stack_t **top, unsigned int line)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
-
-	free(curr);
+	temp = curr->prev->n;
+	curr->prev->n = (*top)->n;
+	(*top)->n = temp;
 }
 
