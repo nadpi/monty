@@ -18,9 +18,9 @@ void fn_div(stack_t **top, unsigned int line)
         fprintf(stderr, "L%d: can't div, stack too short\n", line);
         exit(EXIT_FAILURE);
     }
-    else if ((*top)->prev->n == 0)
+    else if ((*top)->n == 0)
     {
-	    fprintf(stderr, "L%d: can't div, stack too short\n", line);
+	    fprintf(stderr, "L%d: division by zero\n", line);
 	    exit(EXIT_FAILURE);
     }
 
