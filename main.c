@@ -58,6 +58,7 @@ int main(int argc, char *argv[])
 	exit(EXIT_FAILURE);
 	}
 	}
+	free(top);
 	fclose(fp);
 	return (EXIT_SUCCESS);
 }
