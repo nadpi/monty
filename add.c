@@ -7,25 +7,21 @@
  */
 void add(stack_t **top, unsigned int line)
 {
+    stack_t *curr;
+    int sum = 0;
+
+    curr = *top;
 
 
-	if (!(*top) || !((*top)->next))
-	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line);
-		exit(EXIT_FAILURE);
-	}
-/*	stack_t *h;
-	int len = 0;
+    if (!*top || (*top)->prev == NULL)
+    {
+        fprintf(stderr, "L%d: can't add, stack too short\n", line);
+        exit(EXIT_FAILURE);
+    }
 
-	h = *top;
-	while (h)
-	{
-		h = h->next;
-		len++;
-	}
-	if (len < 2)
-	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line);
-	}
-	printf("\n%d",len);*/
+    sum = curr->n + curr->prev->n;
+    curr->prev->n = sum;
+    *top = curr->prev;
+    free(curr);
 }
+
