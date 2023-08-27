@@ -54,5 +54,6 @@ void pop(stack_t **, unsigned int);
 void add(stack_t **, unsigned int);
 void sub(stack_t **, unsigned int);
 void fn_div(stack_t **, unsigned int);
+void fn_mod(stack_t **, unsigned int);
 void mul(stack_t **, unsigned int);
 #endif
