@@ -14,11 +14,12 @@ void execute(stack_t **top, char *oper, int counter)
 	{"nop", nop},
 	{"pint", pint},
 	{"pop", pop},
-	{"add", add}
+	{"add", add},
+	{"div", fn_div}
 	};
 	int i = 0;
 
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 7; i++)
 	{
 		if (strcmp(oper, ops[i].opcode) == 0)
 		{
