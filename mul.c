@@ -8,19 +8,18 @@
 void mul(stack_t **top, unsigned int line)
 {
 	stack_t *curr;
-    int result = 0;
+	int result = 0;
 
-    curr = *top;
+	curr = *top;
 
+	if (!*top || (*top)->prev == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
 
-    if (!*top || (*top)->prev == NULL)
-    {
-        fprintf(stderr, "L%d: can't mul, stack too short\n", line);
-        exit(EXIT_FAILURE);
-    }
-
-    result = (curr->prev->n) * (curr->n);
-    curr->prev->n = result;
-    *top = curr->prev;
-    free(curr);
+	result = (curr->prev->n) * (curr->n);
+	curr->prev->n = result;
+	*top = curr->prev;
+	free(curr);
 }
