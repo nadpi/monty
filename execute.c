@@ -18,11 +18,12 @@ void execute(stack_t **top, char *oper, int counter)
 	{"div", fn_div},
 	{"mul", mul},
 	{"sub", sub},
-	{"mod", fn_mod}
+	{"mod", fn_mod},
+	{"swap", swap}
 	};
 	int i = 0;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (strcmp(oper, ops[i].opcode) == 0)
 		{
